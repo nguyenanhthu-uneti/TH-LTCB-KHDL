@@ -1,0 +1,185 @@
+#bai 1:
+#a
+n = 0 
+while n <= 0:
+    n = int(input("nhap so nguyen duong: "))
+S4 = 0
+i = 1
+while i <= n:
+    S4 += i**2
+    i += 1
+print(f"tong S4 la: {S4}")
+
+#b
+n = 0 
+while n<=0:
+    n = int(input("nhap so nguyen duong: "))
+S5 = 0 
+i = 1 
+while i <= n:
+    S5 += i**3
+    i += 2
+print(f"tong S5 la: {S5}")
+
+#c
+n = 0 
+while n<=0:
+    n = int(input("nhap so nguyen duong: "))
+S6 = 0 
+i = 2 
+while i <= n*2:
+    S6 += i**4
+    i += 2
+print(f"tong S6 la: {S6}")
+
+#bai2:
+#a
+n= 0
+while n<=0:
+    n = int(input("nhap so nguyen duong:"))
+S= 0
+i = 1
+while i <= n:
+    S += ((-1)**(i+1))/i
+    i+=1
+print(f"tong S la: {S}")
+
+
+#b
+n = 0 
+while n<=0:
+    n = int(input("nhap so nguyen duong: "))
+S  = 0
+i = 1
+while i<= n:
+    S += 1/(i*(i+1))
+    i += 1
+print(f"tong S la: {S}")
+
+#c
+import math
+n = 0 
+while n<=0:
+    n = int(input("nhap so nguyen duong: "))
+S  = 0
+i = 2
+while i<= n:
+    S += 1/math.sqrt(i)
+    i += 1
+print(f"tong S la: {S}")
+
+#Bai3:
+import math
+x = float(input("Nhập giá trị x (radian): "))
+cos_x = 1    
+term = 1     
+n = 1       
+while abs(term) >= 1e-4:
+    term *= -x**2 / ((2 * n) * (2 * n - 1))
+    cos_x += term
+    n += 1
+
+print(f"Giá trị gần đúng của cos({x}) là: {cos_x}")
+
+
+#bai4:
+tu_so = int(input("nhap tu so: "))
+mau_so = 0
+while mau_so == 0:
+    mau_so = int(input("nhap mau so: "))
+    if mau_so == 0:
+        print("mau so khong duoc bang 0 .vui long nhap lai")
+print(f"phan so la: {tu_so}/{mau_so}")
+
+#bai6:
+so = -1
+while so<0:
+    so = int(input("nhap so nguyen duong: "))
+chu_so = ["không","một","hai","ba","bốn","năm","sáu","bảy","tám","chín"]
+ket_qua = ""
+so_str = str(so)
+i = 0
+while i < len(so_str):
+    chu = int(so_str[i])
+    ket_qua += chu_so[chu] + " "
+    i += 1
+print("so bang chu la:" , ket_qua.strip())
+
+#bai5:
+so = 0
+while so >= 0:
+    so = int(input("nhap mot so (nhap so am de dung lai): "))
+
+print("ket thuc chuong trinh vi gap so am")
+
+#bai7:
+a = int(input("nhap a: "))
+b = int(input("nhap b: "))
+while a <= 0 or b <= 0:
+    print("vui long nhap hai so nguyen duong")
+    a = int(input("nhap nguyen duong a: "))
+    b = int(input("nhap nguyen duong b: "))
+bcnn = a if a > b else b
+while bcnn % a != 0 or bcnn % b != 0:
+    bcnn += 1
+print(f"boi chung nho nhat của {a} và {b} là: {bcnn}")
+
+#bai8:
+while True:
+    ky_tu = input("nhap mot ky tu bat ky (nhap '0' de thoat): ")
+    if ky_tu == '0':
+        print("ket thuc chuong trinh")
+        break
+    if len(ky_tu) != 1:
+        print("vui long nhap 1 ky tu duy nhat")
+        continue
+    print(f"gia tri ASCII cua '{ky_tu}' la: {ord(ky_tu)}")
+
+#bai9:
+n = int(input("nhap mot so nguyen: "))
+n_str = str(abs(n))
+tong = 0
+for chu_so in n_str:
+    tong += int(chu_so)
+print(f"tong cac chu so cua {n} là: {tong}")
+
+#bai10:
+num = input("nhap so thap phan: ")
+chu_so = ["khong", "mot", "hai", "ba", "bon", "nam", "sau", "bay", "tam", "chin"]
+ket_qua = ""
+for c in num:
+    if c == ".":
+        ket_qua += "cham "
+    elif c.isdigit():
+        ket_qua += chu_so[int(c)] + " "
+    else:
+        print("vui long nhap so thap phan hop le")
+        break
+else:
+    print(f"so {num} doc la: {ket_qua.strip()}")
+
+#bai 11;
+while True:
+    print("\nMenu đồ uống:")
+    print("1. Cafe")
+    print("2. Cam vắt")
+    print("3. Nước ép cà rốt")
+    print("4. Nước lọc")
+    print("5. Nước dừa")
+    print("0. Thoát")
+    chon = input("Nhập số tương ứng với đồ uống bạn muốn gọi (0-5): ")
+    if chon == "1":
+        print("Bạn đã chọn: Cafe")
+    elif chon == "2":
+        print("Bạn đã chọn: Cam vắt")
+    elif chon == "3":
+        print("Bạn đã chọn: Nước ép cà rốt")
+    elif chon == "4":
+        print("Bạn đã chọn: Nước lọc")
+    elif chon == "5":
+        print("Bạn đã chọn: Nước dừa")
+    elif chon == "0":
+        print("Cảm ơn bạn đã sử dụng dịch vụ!")
+        break  
+    else:
+        print("Lựa chọn không hợp lệ, vui lòng chọn từ 0 đến 5.")
